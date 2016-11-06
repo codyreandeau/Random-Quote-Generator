@@ -4,8 +4,6 @@ $('#quoteGETJSON').on("click", function() {
         var html = "";
         
     json.forEach(function(val) {
-        html += "<div class = 'cat'>";
-        html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'> </div>";
     
             });
         $(".message").html(html);
