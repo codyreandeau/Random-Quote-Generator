@@ -16,6 +16,7 @@ var color =
   var rand = Math.floor(Math.random() * color.length);
   console.log(color[rand]);
     document.getElementsByTagName("body")[0].style.backgroundColor=color[rand];
+  document.getElementsByTagName("button")[0].style.backgroundColor=color[rand];
 };
 
 changeBGColor();

@@ -1,3 +1,10 @@
+.btn {
+  margin-right:50px;
+  margin-top:260px;
+  float:right;
+  outline: none;
+}
+
 .container {
   height: 100%;
   width: 100%;
@@ -5,6 +12,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .quotediv {
   border-radius:10px;
   margin-top:50px;
