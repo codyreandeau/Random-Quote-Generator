@@ -18,6 +18,7 @@ $(function() {
     event.preventDefault();
     changeBGColor();
     getQuote(author, text);
+	
   })
 });
 
