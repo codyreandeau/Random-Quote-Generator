@@ -43,11 +43,13 @@ i:hover {
   width: 45em;
   min-height: 15em;
   background-color:white;
+  padding-left:10px;
 }
 
 blockquote {
-  margin-top:40px;
   font-size:2em;
+  border-left:none;
+  margin:40px auto 0px auto;
 }
 
 blockquote footer {
@@ -69,4 +71,4 @@ blockquote footer {
 .footer a:hover{
   color:black;
   text-decoration:none;
-}
+}git 
