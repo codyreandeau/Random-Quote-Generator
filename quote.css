@@ -7,9 +7,10 @@
 }
 
 i {
-   font-size:4.8em;
+   font-size:4.7em;
    margin-left: 1.0em;
    margin-top:-10px;
+   margin-bottom:20px;
 }
 
 i:hover {
@@ -34,7 +35,7 @@ i:hover {
   margin-top:100px;
   margin-bottom:100px;
   width: 45em;
-  height: 25em;
+  min-height: 15em;
   background-color:white;
 }
 
