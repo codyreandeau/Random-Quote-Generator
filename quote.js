@@ -1,15 +1,3 @@
-function quote () {
-$('#quoteGETJSON').on("click", function() {
-  $.getJSON("http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?", function(json) {
-    
-        var html = "";
-        
-    json.forEach(function(val) {});
-        $(".message").html(html);
-    });
-  });
-}
-
 function changeBGColor() {
 var color = 
 ["#e91640", "#6495ed", "#9c4be7", "#65e765", "#e600e6", "#ff6933", "#99ff99", "#c0bb72", "#66ffff", "#66ccff"];
@@ -20,3 +8,33 @@ var color =
 };
 
 changeBGColor();
+
+$(function() {
+  var author = $('#author');
+  var text = $('#quote');
+  getQuote(author, text);
+
+  $('#newQuote').click(function(event) {
+    event.preventDefault();
+    changeBGColor();
+    getQuote(author, text);
+  })
+});
+
+function getQuote(author, text) {
+
+  var forismaticURL = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?"
+
+  $.getJSON(forismaticURL, function(data) {
+
+    text.html(data.quoteText);
+    if (data.quoteAuthor) {
+      author.html(data.quoteAuthor);
+      author.attr("href", data.quoteLink);
+    } else {
+      author.removeAttr("href");
+      author.html("Anonymous");
+    }
+    tweetThis = data.quoteText + " - " + data.quoteAuthor;
+  });
+}
