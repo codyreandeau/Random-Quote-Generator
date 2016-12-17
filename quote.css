@@ -73,3 +73,12 @@ blockquote footer {
   color:black;
   text-decoration:none;
 }
+
+a:hover {
+  text-decoration:none;
+  cursor:crosshair;
+}
+
+.btn:hover {
+  cursor:pointer;
+}
