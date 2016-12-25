@@ -11,15 +11,18 @@ changeBGColor();
 
 $(function() {
   var author = $('#author');
-  var text = $('#quote');
+  var text = $('#quote')
   getQuote(author, text);
 
   $('#newQuote').click(function(event) {
-    event.preventDefault();
+    $('body').fadeOut(300, function(){
+    event.preventDefault()
     changeBGColor();
     getQuote(author, text);
-  })
-});
+    $('body').fadeIn();
+    })
+   });
+  });
 
 var tweet = "";
 $('#tweet').click(function() {
@@ -31,7 +34,7 @@ function getQuote(author, text) {
   var forismaticURL = "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?"
 
   $.getJSON(forismaticURL, function(data) {
-      text.html(data.quoteText);
+      text.html(data.quoteText)
     if (data.quoteAuthor) {
       author.html(data.quoteAuthor);
     } else {
